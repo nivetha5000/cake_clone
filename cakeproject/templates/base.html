@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sweet Hunt{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylecaras.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index' %}">SWEET HUNT</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'birthday' %}">Birthday Cake</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'wedding' %}">Wedding Cake</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'cupcake' %}">Cup Cake</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'variety' %}">Variety Cake</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="{% url 'cart2' %}" id="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge badge-pill badge-danger" id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+     <!-- Main Content -->
+     <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    
+    
+    
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/script2.js' %}"></script>
+    
